@@ -1,0 +1,7 @@
+{
+  "name": "CASWA-EdVisor",
+  "description": "The official Female AI Voice Assistant and Digital Guide of CASWA Model Science School (CMSS), Jacobabad, Pakistan.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
