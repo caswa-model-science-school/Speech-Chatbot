@@ -51,8 +51,8 @@ export const AssistantPanel: React.FC<AssistantPanelProps> = ({ onMessage, messa
     - CASWA's mission includes: Digital Education, Climate Change, and Employability skills.
 
     📅 CONTEXT:
-    - Admissions 2026: Start April 15, 2026. End April 30, 2026.
-    - Classes Start: May 04, 2026.
+    - Admissions 2026: Start August 01, 2026. End August 14, 2026.
+    - Classes Start: August 24, 2026.
     - Focus: Science, Robotics, AI, STEM, Entrepreneurship, Financial Literacy.
     - Location: Wagha Street, near Jamia Pir Bukhari Masjid, Jacobabad.
     - Phone Number: +92 332 2875909.
@@ -75,6 +75,7 @@ export const AssistantPanel: React.FC<AssistantPanelProps> = ({ onMessage, messa
       
       // Check for API key and prompt if missing (for preview models)
       let apiKey = process.env.API_KEY || process.env.GEMINI_API_KEY || '';
+      console.log('API Key present:', !!apiKey, 'Length:', apiKey?.length);
       
       if ((!apiKey || apiKey === 'undefined' || apiKey === '') && (window as any).aistudio) {
         console.log('No API key found in environment, checking AI Studio selection...');
@@ -165,11 +166,16 @@ export const AssistantPanel: React.FC<AssistantPanelProps> = ({ onMessage, messa
           },
           onerror: (e) => { 
             console.error('Live API Error Object:', e);
+            let detail = 'Unknown error';
+            if (e && typeof e === 'object') {
+              detail = (e as any).message || JSON.stringify(e);
+            }
+            
             const isPublished = !window.location.hostname.includes('ais-dev') && !window.location.hostname.includes('localhost');
             if (isPublished) {
-              setErrorMessage('Connection failed. Please ensure GEMINI_API_KEY is set in Settings > Secrets.');
+              setErrorMessage(`Connection failed (${detail}). Ensure GEMINI_API_KEY is set in Settings > Secrets and REPUBLISH the app.`);
             } else {
-              setErrorMessage('Connection error. Check your API key and internet.');
+              setErrorMessage(`Connection error: ${detail}`);
             }
             setStatus(ConnectionStatus.ERROR); 
           },

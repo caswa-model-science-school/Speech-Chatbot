@@ -53,7 +53,7 @@ const App: React.FC = () => {
               </div>
               <div className="text-left">
                 <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Admissions Open</p>
-                <p className="text-xs font-bold text-[#002147]">April 15 - April 30</p>
+                <p className="text-xs font-bold text-[#002147]">August 01 - August 14</p>
               </div>
             </div>
             <div className="bg-white px-5 py-3 rounded-2xl shadow-sm border border-rose-50 flex items-center gap-3">
@@ -62,7 +62,7 @@ const App: React.FC = () => {
               </div>
               <div className="text-left">
                 <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Classes Start</p>
-                <p className="text-xs font-bold text-[#002147]">May 04, 2026</p>
+                <p className="text-xs font-bold text-[#002147]">August 24, 2026</p>
               </div>
             </div>
           </div>
