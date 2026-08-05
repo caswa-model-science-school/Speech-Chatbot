@@ -1,13 +1,17 @@
 import React from 'react';
+import logoImg from '../src/assets/images/caswa_logo_1785940202046.jpg';
 
 export const Header: React.FC = () => {
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-blue-100 shadow-sm">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <div className="w-10 h-10 bg-[#002147] rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-md">
-            C
-          </div>
+          <img 
+            src={logoImg} 
+            alt="CASWA Model Science School Logo" 
+            className="w-12 h-12 object-contain rounded-full shadow-md bg-white p-0.5 border border-blue-100"
+            referrerPolicy="no-referrer"
+          />
           <div>
             <h1 className="text-lg md:text-xl font-extrabold text-[#002147] tracking-tight leading-none uppercase">
               CASWA Model Science School

@@ -4,6 +4,7 @@ import { InfoCards } from './components/InfoCards';
 import { LeadForm } from './components/LeadForm';
 import { Header } from './components/Header';
 import { Message } from './types';
+import logoImg from './src/assets/images/caswa_logo_1785940202046.jpg';
 
 const App: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -36,8 +37,17 @@ const App: React.FC = () => {
       
       <main className="flex-grow container mx-auto px-4 py-10">
         {/* Identity Banner */}
-        <div className="mb-10 text-center">
-          <span className="inline-block px-4 py-1.5 bg-blue-100 text-[#002147] text-[11px] font-black uppercase tracking-[0.25em] rounded-full mb-4">
+        <div className="mb-10 text-center flex flex-col items-center">
+          <div className="relative mb-5 group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-rose-500 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
+            <img 
+              src={logoImg} 
+              alt="CASWA Model Science School Logo" 
+              className="relative w-28 h-28 md:w-36 md:h-36 object-contain rounded-full bg-white p-1 shadow-xl border-2 border-blue-100 transform transition duration-300 hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+          <span className="inline-block px-4 py-1.5 bg-blue-100 text-[#002147] text-[11px] font-black uppercase tracking-[0.25em] rounded-full mb-3">
             Future of Education
           </span>
           <p className="text-lg md:text-xl text-slate-500 font-medium max-w-2xl mx-auto leading-relaxed">

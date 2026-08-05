@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { GoogleGenAI, LiveServerMessage, Modality } from '@google/genai';
 import { decode, decodeAudioData, createBlob } from '../utils/audio';
 import { ConnectionStatus, Message } from '../types';
+import logoImg from '../src/assets/images/caswa_logo_1785940202046.jpg';
 
 interface AssistantPanelProps {
   onMessage: (role: 'user' | 'assistant', text: string) => void;
@@ -227,7 +228,13 @@ export const AssistantPanel: React.FC<AssistantPanelProps> = ({ onMessage, messa
 
   return (
     <div className="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-blue-100 flex flex-col h-[780px] transition-all">
-      <div className="bg-[#002147] py-3 px-6 text-center shadow-md">
+      <div className="bg-[#002147] py-2.5 px-6 flex items-center justify-center gap-2.5 shadow-md">
+        <img 
+          src={logoImg} 
+          alt="CASWA Logo" 
+          className="w-6 h-6 rounded-full bg-white p-0.5 object-contain"
+          referrerPolicy="no-referrer"
+        />
         <h3 className="text-white text-[11px] font-black uppercase tracking-[0.4em]">
           CASWA Model Science School
         </h3>
